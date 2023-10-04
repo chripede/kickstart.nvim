@@ -12,5 +12,11 @@ return {
   },
   config = function()
     require('neo-tree').setup {}
+
+    --    vim.cmd([[nnoremap \ :Neotree toggle<cr>]])
+    vim.keymap.set('n', '\\', "<Cmd>Neotree toggle reveal<CR>", { desc = 'Toggle Neotree' })
+    vim.keymap.set('n', '<leader>ng', "<Cmd>Neotree toggle reveal git_status<CR>", { desc = '[N]eotree [G]it status' })
+    vim.keymap.set('n', '<leader>nb', "<Cmd>Neotree buffers toggle reveal<CR>",
+      { desc = '[N]eotree [B]uffers' })
   end,
 }
